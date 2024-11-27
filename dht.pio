@@ -1,0 +1,23 @@
+; dht.pio
+
+.program dht
+.wrap_target
+    jmp y--, $        ; Wait for y loops
+    set pindirs, 0    ; Set pin to input
+wait_pin_low:
+    jmp pin, wait_pin_low    ; Wait for pin to go low
+wait_pin_high:
+    jmp pin, $+3      ; If pin is high, skip next instruction
+    jmp wait_pin_high ; Wait for pin to go high
+    jmp $+1           ; Skip next instruction
+    jmp wait_pin_high ; Wait for pin to go high
+    mov y, osr        ; Load osr to y
+bitloop:
+    jmp pin, got_high
+    jmp bitloop
+got_high:
+    jmp pin, got_high
+    jmp $+1
+    jmp bitloop
+    in null, 1
+.wrap
