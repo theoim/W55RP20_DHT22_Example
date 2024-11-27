@@ -22,8 +22,8 @@ This project demonstrates how to use the **DHT22 temperature and humidity sensor
 - USB cable for serial communication
 
 ## Usage
-1. Connect the DHT22 sensor to the W55RP20 EVB board as per the pin mapping.
-2. Flash the provided `main.c` code to the board using your preferred development environment.
+1. Connect the DHT22 sensor to the W55RP20 EVB board as per the pin mapping and enter boot mode.
+2. Flash the provided `W55RP20_DHT22_Example.uf2` file to the board using your preferred development environment.
 3. Open a serial terminal (e.g., PuTTY, Arduino Serial Monitor) at the appropriate baud rate.
 4. Observe the temperature and humidity readings output every 2 seconds.
 
